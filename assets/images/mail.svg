@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="19px" viewBox="0 0 24 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Two-Tone-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-878.000000, -328.000000)" id="Email">
+            <g transform="translate(850.000000, 310.000000)">
+                <g id="Icon" transform="translate(28.000000, 18.000000)">
+                    <path d="M12,9.3423 C11.911,9.3423 11.824,9.3193 11.748,9.2743 L0.5,2.7133 L0.5,1.0003 C0.5,0.7243 0.725,0.5003 1,0.5003 L23,0.5003 C23.275,0.5003 23.5,0.7243 23.5,1.0003 L23.5,2.7133 L12.252,9.2743 C12.176,9.3193 12.089,9.3423 12,9.3423" id="Fill" fill="#DAF3FF"></path>
+                    <path d="M23,18 L1,18 L1,3.583 L11.496,9.706 C11.652,9.797 11.826,9.842 12,9.842 C12.174,9.842 12.348,9.797 12.504,9.706 L23,3.583 L23,18 Z M1,1 L23,1 L23,2.426 L12,8.842 L1,2.426 L1,1 Z M23,0 L1,0 C0.448,0 0,0.448 0,1 L0,18 C0,18.552 0.448,19 1,19 L23,19 C23.552,19 24,18.552 24,18 L24,1 C24,0.448 23.552,0 23,0 L23,0 Z" id="Outline" fill="#0096ff"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

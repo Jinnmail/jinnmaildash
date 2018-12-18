@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/mailbox.css">
+    <title>Mailbox</title>
+</head>
+
+<body>
+    <div class="mailbox-container">
+        <div class="mailbox-sidebar">
+            <a href="index.html" class="btn btn-default back-btn mb-4 bg-white m-4">← Back to dashboard</a>
+            <h5 class="my-4 p-2 text-center">Your mailboxes</h5>
+            <!-- <div class="add-new" data-toggle="modal">
+                + ADD NEW MAILBOX
+            </div> -->
+            <ul class="list-unstyled mailbox-list appent_element">
+                <li class="position-relative">
+                    <a class="" href="#">d
+                        <span class="delete-btn">×</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="justify-content-center align-center empty-mail-section flex-column">
+            <img src="assets/images/empty-drive.svg" alt="Empty">
+            <h5>No mailbox selected</h5>
+        </div>
+        <div class="mail-content-wrapper">
+            <h3 class="pb-3">dd.a47b3b@Jinnmail.io</h3>
+            <div class="email-details p-3 mt-4">
+                <p class="mb-0"> From: contact@Jinnmail.io </p>
+                <p class="mb-0"> Date: Tue Dec 04 2018 9:26:15 PM </p>
+                <h5 class="mb-0 mt-2">Your new Jinnmail is ready!</h5>
+            </div>
+            <h4 class="mt-5 text-center font-weight-normal">All emails have been loaded</h4>
+        </div>
+
+    </div>
+
+
+    <!--  Add new mail modal  -->
+    <div class="create-burner-model modal fade" id="addNewMail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="card-header-title m-0">Create A New Mailbox</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="user-mail-address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text">8456be</span>
+                        </div>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary create-mail" type="button">Create a new mailbox address</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Add new mail modal ends  -->
+
+    <!-- premium modal popup start from here  -->
+    <div class="modal fade" id="premiumModal" tabindex="-1" role="dialog" aria-labelledby="premiumModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <button type="button" class="close text-right text-white font-weight-bold" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="premium-title mb-4">
+                        This is a Premium only feature
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <img src="assets/images/logo.svg" alt="Logo" class="logo-img">
+
+                            <ul class="list-unstyled mb-4">
+                                <li>🔎 Stop letting companies and advertisers to track you online</li>
+                                <li> 🕵 Find out who sold your email address </li>
+                                <li> 🛡 stop being a target for hackers and scammers</li>
+                                <li> 👀 Reply to strangers using a Jinnmail address instead of your personal one
+                                </li>
+                                <li> 🚫 Control who can send you emails </li>
+                                <li>
+                                    🔌 Instantly shut down any sender. No more "unsubscribe wars".
+                                </li>
+                                <li>
+                                    💌 Sign up on websites fast and without fear
+                                </li>
+                                <li>
+                                    🚚Stop spam before it reaches your inbox
+                                </li>
+                                <li>
+                                    ✌️ Enjoy fewer interruptions and less clutter
+                                </li>
+                                <li>🏠 Support a bootstrapped service that's not funded by money hungry VCs and data hungry companies
+                                </li>
+                            </ul>
+                            <a class="text-center d-block font-weight-bold" href="#">Why isn't Jinn Mail completely free?</a>
+                        </div>
+                        <div class="col-md-6">
+                            <h3 class="mb-3">Get Jinn Mail Premium</h3>
+                            <div class="plan-list mb-3">
+                                <div class="plan-list-item">
+                                    <p class="mb-0">Monthly</p>
+                                    <p class="mb-1">$0.16/day</p>
+
+                                    <p class="mb-0 plan-price">
+                                        <span class="strikeout">$4.99</span> $2.49 billed for the first month</p>
+                                </div>
+                                <div class="plan-list-item">
+                                    <p class="mb-0">Yearly</p>
+                                    <p class="mb-1">3-months off</p>
+
+                                    <p class="mb-0 plan-price">
+                                        <span class="strikeout">$44.99</span> $22.49 billed for the first year</p>
+                                </div>
+                                <div class="plan-list-item px-5 is-active">
+                                    <p class="mb-0">3 Years</p>
+                                    <p class="mb-1">16-months off</p>
+
+                                    <p class="mb-0 plan-price">
+                                        <span class="strikeout">$99.99</span> $49.99 billed for the first 3 years</p>
+                                    <div class="best-value-plan">
+                                        <span class="d-block">⭐️</span>
+                                        <span class="text">Best Value</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center">🎄50% off for your first payment</p>
+                            <p class="text-center text-danger">Don't forget to turn off your VPN before purchasing.</p>
+                            <input type="button" value="Upgrade Now" class="upgrade-btn btn btn-primary d-block mx-auto">
+                            <p class="mb-0 plan-price text-center mt-1">VAT included. Cancel anytime.</p>
+                            <h4 class="text-center">🔐 Secure payments by Paddle</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- premium modal popup start from here  -->
+
+    <!-- Email overlay popup starts -->
+    <div class="overlay-email-container">
+        <button class="close close-overlay-email">×</button>
+        <div class="inner-container">
+            <div class="empty empty-loader">
+                <img src="assets/images/loader.svg" alt="Loading">
+            </div>
+            <div class="email-container">
+                <div class="from"> From: contact@Jinnmail.io </div>
+                <div class="date"> Date: Tue Dec 04 2018 9:26:15 PM </div>
+                <div class="subject"> Subject: Your new Jinnmail is ready! </div>
+                <div class="reply-to-container mt-4">
+                    <label for="reply-to">Reply to this email:</label>
+                    <textarea id="reply-to" class="reply-to-textarea"></textarea>
+                    <button class="btn btn-primary">Reply</button>
+                </div>
+                <div class="email-body-container mt-4">
+                    <textarea class="reply-to-textarea w-100" rows="10"></textarea>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="dark-overlay "></div>
+    <!-- Email overlay popup ends -->
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/custom.js"></script>
+</body>
+
+</html>

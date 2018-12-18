@@ -1,0 +1,303 @@
+/*  Global styles starts from here  */
+body{
+    background: #f5f6fa;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #4a4a4a;
+    line-height: 1.5;
+}
+a {
+    font-weight: 600;
+    color: #242424;
+}
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.bg-white{
+    background-color: #fff;
+}
+/*  Global styles starts from here  */
+
+/* Navbar styles starts from here */
+.navbar{
+    max-height: 100%;
+    overflow: auto;
+    background-color: #fff;
+    box-shadow: 2px 0 3px hsla(0,0%,4%,.1);
+    z-index: 7;
+    padding: 1rem 3.5rem;
+}
+.navbar-light .nav-link{
+    padding: .5rem 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;            
+    text-align: center;
+    color: #888;
+    font-weight: 500;
+    border-radius: 290486px;
+}
+.nav-link.active,
+.nav-link:hover{
+    box-shadow: 0 2px 3px hsla(0,0%,4%,.05), 0 0 0 1px hsla(0,0%,4%,.05);
+    color: #0096ff !important;
+}
+.navbar-light .nav-link img{
+    margin-right: 0.4em;
+    width: 1rem;
+    vertical-align: middle;
+}
+.navbar-right-section span{
+    font-size: .9em;
+}
+.navbar-right-section .btn{
+    justify-content: center;
+    padding: calc(.375em - 1px) .75em;
+    font-size: .75rem;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+/* Navbar styles ends from here */
+
+ /* main cotainer styles starts here */
+    .main-container{
+        padding: 3rem 1.5rem;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+        padding-bottom: 2rem;
+    }
+ /* main cotainer styles ends here */
+ 
+
+ /* dashboard styles starts from here */
+.dashboard-wrapper .title{
+    font-size: 2rem;
+    color: #363636;
+    font-weight: 600;
+    line-height: 1.125;
+}
+
+.dashboard-wrapper .heading{
+    color: #959cad;
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.manage-container{
+    margin: 3.5rem 0;
+}
+
+.search-burner{
+    max-width: 240px;
+    display: inline-block;
+    border-radius: 25px;
+    padding: 8px 20px;
+    background-image: url(../images/search.svg);
+    background-repeat: no-repeat;
+    background-position: 90%;
+    background-size: auto 45%;
+}
+
+.manage-buttons .btn{
+    border-radius: 25px;
+    padding: 9px 15px;
+    margin-right: 7px;
+    font-size: 18px;
+    line-height: 17px;
+}
+.create-icon{
+    height: 1.5em;
+    width: 1.5em;
+    margin-right: .35rem;
+    font-size: .6em;
+    vertical-align: inherit;
+    position: relative;
+    top: -2px;
+}
+.burner-content button{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    line-height: 40px;
+    cursor: pointer;
+}
+.burner-content .delete-btn{
+    height: 24px;
+    width: 24px;
+    background-color: hsla(0,0%,4%,.2);
+    border-radius: 50%;
+    position: relative;
+    top: 13px;
+}
+.burner-content .delete-btn:before{
+    height: 2px;
+    width: 50%;
+    background-color: #fff;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+}
+.burner-content .delete-btn:after{
+    height: 50%;
+    width: 2px;
+    background-color: #fff;
+    content: "";
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform-origin: center center;
+}
+.mangae-slider-btn{
+    top:13px;
+}
+.mangae-slider-btn input[type="checkbox"]{
+    outline:0;
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    z-index: 9;
+    width: 42px;
+    height: 23px;
+    cursor: pointer;
+}
+.mangae-slider-btn label:before{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 3rem;
+    height: 1.5rem;
+    border: .1rem solid transparent;
+    border-radius: 4px;
+    background: #b5b5b5;
+    content: "";
+}
+.mangae-slider-btn label:after{
+    display: block;
+    position: absolute;
+    top: .25rem;
+    left: .25rem;
+    width: 1rem;
+    height: 1rem;
+    transform: translateZ(0);
+    border-radius: 25px;
+    background: #fff;
+    transition: all .25s ease-out;
+    content: "";
+}
+.is-success:checked+label:before {
+    background: #23d160;
+}
+.is-rounded+label:before {
+    border-radius: 24px;
+}
+/* .is-rounded:checked+label:before {
+    background: #0096ff;
+} */
+.is-rounded:checked+label:after {
+    left: 1.625rem;
+}
+.dashboard-info-container img{
+    width: 38px;
+}
+ /* dashboard styles ends from here */
+
+/* popup styles starts from here */
+.modal-dialog {
+    max-width: 870px;
+}
+ .input-group-text{
+    background: transparent;
+ }
+ .premium-title{
+    padding: 12px 0;
+    background: #0096ff;
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 5px;
+ }
+ .logo-img{
+    margin: 0 auto;
+    display: block;
+    width: 12em;
+ }
+#premiumModal ul li{
+    padding: .5em 0;
+    border-bottom: 1px solid #f5f6fa;
+}
+#premiumModal a{
+    font-size: .7em;
+}
+.plan-list{
+    background: #f5f6fa;
+    border-radius: 6px;
+    padding: .4em;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.1);
+}
+.plan-list-item{
+    cursor: pointer;
+    padding: .5em;
+    text-align: center;
+    position: relative;
+    opacity: .75;
+}
+.plan-price{
+    font-size: .7em;
+    color: #959cad;
+}
+.best-value-plan{
+    position: absolute;
+    right: 0;
+    top: 17px;
+}
+.best-value-plan .star{
+    font-size: 23px;
+}
+.best-value-plan .text{
+    vertical-align: text-top;
+    font-size: 10px;
+}  
+
+/* popup styles ends from here */
+
+/* table styles starts here */
+.table td, .table th {
+    padding: 1rem;
+    border-top: 0;
+}
+/* table styles ends here */
+
+
+/* media quries for responsive starts here */
+ @media(min-width:320px) and (max-width:768px){
+    .dashboard-wrapper .title{
+        font-size: 1.7rem;
+    }
+    .main-container{
+        padding: 20px;
+    }
+ }
+ @media(min-width:320px) and (max-width:991px){
+   .mangae-slider-btn{
+    width: 50px;
+    margin: 0 auto;
+   }
+ }
+/* media quries for responsive ends here */
+ 

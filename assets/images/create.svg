@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="19px" viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Two-Tone-Icons" stroke="#fff" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-701.000000, -238.000000)" fill="#fff" id="Add">
+            <g transform="translate(670.000000, 220.000000)">
+                <g id="Icon" transform="translate(31.000000, 18.000000)">
+                    <path d="M18.5,9 L10,9 L10,0.5 C10,0.224 9.776,0 9.5,0 C9.224,0 9,0.224 9,0.5 L9,9 L0.5,9 C0.224,9 0,9.224 0,9.5 C0,9.776 0.224,10 0.5,10 L9,10 L9,18.5 C9,18.776 9.224,19 9.5,19 C9.776,19 10,18.776 10,18.5 L10,10 L18.5,10 C18.776,10 19,9.776 19,9.5 C19,9.224 18.776,9 18.5,9" id="Outline"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

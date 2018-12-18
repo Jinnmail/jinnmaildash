@@ -1,0 +1,229 @@
+a:hover{
+    text-decoration: none;
+}
+a {
+    font-weight: 600;
+    color: #242424;
+}
+.mailbox-sidebar{
+    position: absolute;
+    height: 100%;
+    background-color: #273142;
+    color: #fff;
+    width: 220px;
+    max-width: 250px;
+    
+}
+.add-new{
+    font-weight: bold;
+    padding: 10px;
+    background-color: rgba(0,0,0,.2);
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 18px;
+}
+.mailbox-sidebar .back-btn{
+    border-radius: 25px;
+    color: #0a0a0a;
+    padding: 3px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    float: right
+}
+.empty-mail-section{
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-left: 220px;
+}
+.empty-mail-section img{
+    width: 100px;
+}
+.mailbox-list li a{
+    width: 100%;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+.mailbox-list li a.active{
+    background: #0074d9;
+}
+.mailbox-list li{
+    overflow: hidden;
+}
+.mailbox-list li a .delete-btn{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    top: 0;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    line-height: 42px;
+    background: rgba(0,0,0,.2);
+    transition: transform .15s ease-in;
+    transform: translateX(100%);
+}
+.mailbox-list li a:hover  .delete-btn{
+    transform: translateX(0);
+}
+.mailbox-list li a:hover{
+    background-color: #333d4c;
+}
+.mailbox-list li a.active:hover{
+    background-color: #0074d9;
+}
+.mail-content-wrapper{
+    padding: 45px;
+    display: none;
+    padding-left: 260px;
+}
+.mail-content-wrapper h3{
+    border-bottom: 1px solid #f5f5f5;
+}
+.email-details{
+    background-color: #fff;
+    box-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0 0 1px hsla(0,0%,4%,.1);
+    max-width: 100%;
+    position: relative;
+    cursor: pointer;
+    font-weight: 400;
+    color: #ababab;
+}
+.modal-dialog {
+    max-width: 870px;
+}
+
+/* Premium popup styles starts here */
+
+ .premium-title{
+    padding: 12px 0;
+    background: #0096ff;
+    text-align: center;
+    color: #fff;
+    font-size: 19px;
+    font-weight: bold;
+    border-radius: 5px;
+ }
+ .logo-img{
+    margin: 0 auto;
+    display: block;
+    width: 12em;
+ }
+#premiumModal ul li{
+    padding: .5em 0;
+    border-bottom: 1px solid #f5f6fa;
+}
+#premiumModal a{
+    font-size: .7em;
+}
+.plan-list{
+    background: #f5f6fa;
+    border-radius: 6px;
+    padding: .4em;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,.1);
+}
+.plan-list-item{
+    cursor: pointer;
+    padding: .5em;
+    text-align: center;
+    position: relative;
+    opacity: .75;
+}
+.plan-price{
+    font-size: .7em;
+    color: #959cad;
+}
+.best-value-plan{
+    position: absolute;
+    right: 0;
+    top: 17px;
+}
+.best-value-plan .star{
+    font-size: 23px;
+}
+.best-value-plan .text{
+    vertical-align: text-top;
+    font-size: 10px;
+}  
+.plan-list-item.is-active {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 3px hsla(0,0%,4%,.1), 0 0 0 1px hsla(0,0%,4%,.1);
+    color: #4a4a4a;
+    display: block;
+    margin-bottom: 0!important;
+    padding: .5em;
+    opacity: 1;
+}
+
+/* Premium popup styles starts here */
+
+/* Email overlay popup styles starts  */
+.overlay-email-container{
+    background: #fff;
+    position: fixed;
+    top: 0;
+    right: -62%;
+    width: 60%;
+    height: 100%;
+    padding: 1em;
+    transition: all .3s ease-out;
+    box-shadow: 10px 0 14px 8px rgba(0,0,0,.5);
+    z-index: 4;
+}
+
+.overlay-email-container.active {
+    right: 0;
+}
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease-in;
+    background: rgba(0,0,0,.1);
+}
+.dark-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.email-container .from {
+    font-size: 1em;
+    color: #ababab;
+}
+.email-container .date, .email-container .from {
+    color: #ababab;
+}
+.email-container {
+    background-color: #fff;
+    color: #4a4a4a;
+    padding: 1.25em;
+}
+.reply-to-container .reply-to-textarea {
+    width: 100%;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: .5em;
+}
+.email-body-container textarea{
+    resize: none;
+}
+.empty.empty-loader img {
+    width: 7.5em;
+    margin: 0 auto;
+    display: block;
+}
+.empty.empty-loader {
+    margin: 3em auto;
+}
+
+/* Email overlay popup styles ends  */
+ 
