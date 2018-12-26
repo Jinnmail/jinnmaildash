@@ -73,7 +73,7 @@
                 <h3 class="title mb-4">Manage Jinn Mails</h3>
                 <div class="manage-buttons text-center text-sm-left">
                     <a href="#" id="generate-jinnmail-web" class="btn btn-primary mb-2">Generate Jinn Mail</a>
-                    <a href="#" class="btn btn-primary mb-2" data-toggle="modal" data-target="#createModal">
+                    <a href="#" id="custom-jinnmail-web" class="btn btn-primary mb-2" data-toggle="modal" data-target="#createModal">
                         <img src="assets/images/create.svg" alt="plus" class="create-icon">Create custom Jinn Mail</a>
                     <input type="text" class="form-control mb-2 search-burner" placeholder="Search">
                 </div>
@@ -219,13 +219,13 @@
 
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" id="custom-alias" aria-label="Recipient's username" aria-describedby="basic-addon2">
                         <!-- <span class="input-text">8456be</span> -->
                         <div class="input-group-append">
-                            <span class="input-group-text">8456be</span>
+                            <span id="custom-rand" class="input-group-text"></span>
                         </div>
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">Create a custom email</button>
+                            <button  class="btn btn-primary" type="button">Create a custom email</button>
                         </div>
                     </div>
                 </div>

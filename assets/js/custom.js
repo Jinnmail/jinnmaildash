@@ -9,17 +9,28 @@ $(document).ready(function () {
     });
 
 
+
+    let randomString = (string_length) => {
+        let chars = "0123456789abcdefghiklmnopqrstuvwxyz";
+        let randomstring = '';
+        for (let i = 0; i < string_length; i++) {
+            let rnum = Math.floor(Math.random() * chars.length);
+            randomstring += chars.substring(rnum, rnum + 1);
+        }
+        return randomstring;
+    }
+
     $(document).on('click', '.mailbox-list li a', function () {
         $(".empty-mail-section").hide();
         $(".mail-content-wrapper").show();
         $(this).addClass("active");
     });
 
-    $(".plan-list-item").click(function(){
+    $(".plan-list-item").click(function () {
         $(".plan-list-item").removeClass("is-active");
         $(this).addClass("is-active");
     })
-    
+
     $(document).on('click', '.delete-btn', function () {
         var result = confirm("Are you sure!!");
         if (result == true) {
@@ -38,12 +49,12 @@ $(document).ready(function () {
     })
 
 
-    $(".close-overlay-email, .dark-overlay").click(function(){
+    $(".close-overlay-email, .dark-overlay").click(function () {
         $(".overlay-email-container").removeClass("active")
         $(".dark-overlay").removeClass("active")
     });
 
-    $(".email-details").click(function(){
+    $(".email-details").click(function () {
         $(".overlay-email-container").addClass("active");
         $(".dark-overlay").addClass("active");
     })
