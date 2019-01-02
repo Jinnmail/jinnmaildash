@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>Dashboard</title>
 </head>
 
 <body>
     <!-- Navbar Starts  -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light flex-row">
         <a class="navbar-brand m-0" href="#">
             <img src="assets/images/logo.png" alt="logo">
         </a>
@@ -58,24 +63,22 @@
                     <p id="no-of-jinn" class="title"></p>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <p class="heading">BLOCKED EMAILS</p>
+                    <p class="heading">“Blocked emails today</p>
                     <p class="title">0</p>
                 </div>
                 <div class="col-sm-6 col-md-4 text-center">
-                    <p class="heading">FORWARED EMAILS</p>
+                    <p class="heading">Forwarded emails today</p>
                     <p class="title">0</p>
                 </div>
             </div>
 
-
-
             <div class="manage-container">
                 <h3 class="title mb-4">Manage Jinn Mails</h3>
                 <div class="manage-buttons text-center text-sm-left">
-                    <a href="#" id="generate-jinnmail-web" class="btn btn-primary mb-2">Generate Jinn Mail</a>
+                    <a href="#" id="generate-jinnmail-web" class="btn btn-primary mb-2" data-toggle="modal" data-target="#domainModal">Generate new alias</a>
                     <a href="#" id="custom-jinnmail-web" class="btn btn-primary mb-2" data-toggle="modal" data-target="#createModal">
-                        <img src="assets/images/create.svg" alt="plus" class="create-icon">Create custom Jinn Mail</a>
-                    <input type="text" class="form-control mb-2 search-burner" placeholder="Search">
+                        <img src="assets/images/create.svg" alt="plus" class="create-icon">New custom alias</a>
+                    <input type="text" id="searchedInput" class="form-control mb-2 search-burner" placeholder="Search">
                 </div>
 
 
@@ -205,6 +208,35 @@
     </footer>
     <!--  footer ends from here  -->
 
+    <!-- create modal popup for Generate Jinnmail button start from here  kuchhbhi--> 
+    <div class="create-domain domain-model modal fade" id="domainModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="card-header-title m-0">Website or App</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="domain-alias" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus>
+                        <!-- <span class="input-text">8456be</span> -->
+                        <!-- <div class="input-group-append">
+                            <span id="custom-rand" class="input-group-text"></span>
+                        </div> -->
+                        <div class="input-group-append">
+                            <button id="generate-alias-domain-submit" class="btn btn-primary" type="button">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- create modal popup ends from here  -->
+
     <!-- create modal popup start from here  -->
     <div class="create-Jinn Mail-model modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -219,7 +251,7 @@
 
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="custom-alias" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control" id="custom-alias" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus>
                         <!-- <span class="input-text">8456be</span> -->
                         <!-- <div class="input-group-append">
                             <span id="custom-rand" class="input-group-text"></span>

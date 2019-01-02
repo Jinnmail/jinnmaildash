@@ -26,7 +26,7 @@ a:hover{
     background-color: #fff;
     box-shadow: 2px 0 3px hsla(0,0%,4%,.1);
     z-index: 7;
-    padding: 1rem 3.5rem;
+    padding: 1rem 3.5rem !important;
 }
 .navbar-light .nav-link{
     padding: .5rem 1rem;
@@ -45,6 +45,9 @@ a:hover{
 .nav-link:hover{
     box-shadow: 0 2px 3px hsla(0,0%,4%,.05), 0 0 0 1px hsla(0,0%,4%,.05);
     color: #0096ff !important;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 16px;
 }
 .navbar-light .nav-link img{
     margin-right: 0.4em;
@@ -121,6 +124,7 @@ a:hover{
     vertical-align: inherit;
     position: relative;
     top: -2px;
+    display: inline-block;
 }
 .burner-content button{
     background: transparent;
@@ -283,6 +287,18 @@ a:hover{
 }
 /* table styles ends here */
 
+/* modal stles */
+.input-group-append { 
+    margin-left: 5px !important; 
+}
+
+.credintials-error, .email-web-error, .password-web-error{
+    font-size: 14px;
+    color: red;
+    text-align: center;
+    margin-bottom: 2px;
+    display: none;
+}
 
 /* media quries for responsive starts here */
  @media(min-width:320px) and (max-width:768px){
