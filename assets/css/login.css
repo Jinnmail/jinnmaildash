@@ -1,0 +1,43 @@
+#login .container,
+.forgot-password .container
+{ 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-wrap{
+    padding: 30px 20px;
+    background: #fff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+    max-width: 500px;
+    border-radius: 5px;
+    width: 100%;
+}
+#login .form-control,
+.forgot-password .form-control{
+    border: 1px solid #C4CCD1;
+    box-shadow: inset 0px 1px 3px 0px rgba(140, 150, 157, .3);
+    border-radius: 4px;
+    height: 46px;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 20px;
+}
+#btn-login,
+#btn-reset{
+    background-color: #3A6BB3;
+    color: #FFF ;
+    font-size: 17px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 500;
+    padding: 10px;
+    border-color: #3A6BB3;
+}
+.email-web-error,
+.credintials-error,
+.password-web-error{
+    text-align: left;
+}
