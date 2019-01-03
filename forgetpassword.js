@@ -27,7 +27,9 @@ $(document).ready(() => {
                 data: data,
                 success: (success) => {
                     console.log(success)
-                    $(".success-msg").show();                    
+                    $(".success-msg").show();
+					alert('password change successfully');
+                                        
                 },
                 error: (err) => {
                     // alert(err.responseJSON.error)
