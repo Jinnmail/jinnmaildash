@@ -300,6 +300,11 @@ a:hover{
     display: none;
 }
 
+#custom-alias-submit{
+    text-align: center;
+    width: 100%;
+}
+
 /* media quries for responsive starts here */
  @media(min-width:320px) and (max-width:768px){
     .dashboard-wrapper .title{
