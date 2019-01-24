@@ -37,9 +37,11 @@
                 </a>
                 <!-- <a class="nav-item nav-link mx-3" href="mailbox.html">
                     <img src="assets/images/mail.svg" alt="Mailbox">Mailbox</a> -->
-
             </div>
-            <div class="form-inline my-2 my-lg-0 ml-auto flex-column navbar-right-section">
+            <div id="detailsUser" class="form-inline flex-column navbar-right-section">
+                <p id="userDetails"></p>
+            </div>
+            <div class="form-inline flex-column navbar-right-section">
                 <a class="nav-item nav-link mx-3" href="login.html">
                     <img src="assets/images/logout.svg" alt="logout">Log Out</a>
             </div>
@@ -74,7 +76,7 @@
 
             <div class="manage-container">
                 <h3 class="title mb-4">Manage Jinn Mails</h3>
-                <div class="manage-buttons text-center text-sm-left">
+                <div class="manage-buttons sticky text-center text-sm-left">
                     <a href="#" id="generate-jinnmail-web" class="btn btn-primary mb-2" data-toggle="modal" data-target="#domainModal">Generate new alias</a>
                     <a href="#" id="custom-jinnmail-web" class="btn btn-primary mb-2" data-toggle="modal" data-target="#createModal">
                         <img src="assets/images/create.svg" alt="plus" class="create-icon">New custom alias</a>
@@ -362,6 +364,7 @@
     <!-- premium modal popup start from here  -->
 
     <!-- Optional JavaScript -->
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -369,6 +372,7 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
