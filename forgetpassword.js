@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
     let url = 'https://jinnmailapp.herokuapp.com/api/v1/';
+    // let url = 'http://localhost:3000/api/v1/';
     // let url = 'http://localhost:9001/api/v1/'
 
     $('#btn-reset').click(() => {
