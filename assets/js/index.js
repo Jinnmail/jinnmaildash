@@ -3,6 +3,7 @@ $(document).ready(function () {
     if (jinnmailToken) {
         alert("log out now")
     } else {
-        window.location.href = 'http://localhost:8000/login.html'
+        window.location.href = 'https://jinnmaildash.herokuapp.com/login.html'
+        // window.location.href = 'http://localhost:8000/login.html'
     }
 });
