@@ -1,4 +1,4 @@
 ```
-change constants.js
+comment/uncomment environment variables in constants.js
 
 ```
