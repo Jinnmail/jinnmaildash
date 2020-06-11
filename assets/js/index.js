@@ -50,18 +50,6 @@ $(document).ready(function () {
                 }
             }
         }
-        // if (event.which !== 13) {
-        //     alert(String.fromCharCode(event.which))
-        // }
-                    // if (!emailAddressAllowed($('#custom-alias').val() + String.fromCharCode(event.which) + "@jinnmail.com")) {
-                // alert($('#custom-alias').val() + String.fromCharCode(event.which) + "@jinnmail.com")
-
-                // $(".error-message").show()
-                // return false
-                // $('#custom-alias').val("Not Allowed")
-            // }
-            // substring(0, length-1)
-            // alert(String.fromCharCode(event.which))
     });
 });
 
