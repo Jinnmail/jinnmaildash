@@ -344,7 +344,6 @@ $(document).ready(function () {
     }
 
     $(document).delegate(".copy-clip", "click", function (e) {
-        alert()
         let email=e.currentTarget.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.innerText;
         copyToClipboard(email)
 
