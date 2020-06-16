@@ -77,7 +77,13 @@ $(document).ready(function () {
     if (!jinnmailToken) {
         window.location.href = JM_DASHBOARD_URL;
     } else {
-        init()
+        const jinnmailToken2 = JSON.parse(atob(jinnmailToken.split('.')[1]));
+        if (Date.now() >= jinnmailToken2.exp * 1000) {
+            localStorage.removeItem('jinnmailToken');
+            window.location.href = JM_DASHBOARD_URL;
+        } else {
+            init()
+        }
     }
 
     $("#generate-jinnmail-web").click((e) => {
