@@ -205,6 +205,7 @@ $(document).ready(function () {
     })
 
     $("#custom-jinnmail-web").click((e) => {
+        $("#alias-found-error").text('')
         $("#custom-domain-alias").val('')
         $("#custom-alias").val('')
         $("#formed-email").text('@jinnmail.com')
