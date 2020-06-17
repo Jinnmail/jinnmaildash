@@ -11254,9 +11254,12 @@ html {
 }
 
 #row-content .mb-2.cols-1 {
-    min-width: 198px;
-    max-width: 198px;
+    min-width: 320px;
+    max-width: 320px;
+    /* min-width: 198px;
+    max-width: 198px; */
     word-break: break-all;
+    font-weight: bold;
 }
 .confirmation.__visible button{
     font-size: 1em;

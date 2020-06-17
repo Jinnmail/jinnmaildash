@@ -46,7 +46,7 @@ $(document).ready(function () {
                                                 
                         '<div class="mb-2 cols-7">' +
                         '<div class="td-actions text-center">' +
-                        '<button type="button" rel="tooltip" class="btn btn-info btn-icon btn-sm btn-neutral  copy-clip" ><i class="fa fa-copy"></i></button>'+
+                        `<button type="button" rel="tooltip" class="btn btn-info btn-icon btn-sm btn-neutral  copy-clip" ><i id="xt${index}" class="fa fa-copy selector" style="font-size: 25px;" data-toggle="tooltip"></i></button>`+
                         '<div  class="onoff bootstrap-switch wrapper bootstrap-switch-' + status + '" id=' + success.data[index].aliasId + ' style="width: 100px;">' +
                         '<div  class="bootstrap-switch-container" style="width: 150px; margin-left: 0px;"><span class="bootstrap-switch-handle-on bootstrap-switch-primary" style="width: 50px;">ON</span><span class="bootstrap-switch-label" style="width: 50px;"> </span><span class="bootstrap-switch-handle-off bootstrap-switch-default" style="width: 50px;">OFF</span></div>' +
                         '</div>' +
@@ -85,7 +85,23 @@ $(document).ready(function () {
             init()
         }
     }
-
+      
+    function setTooltip(message, id) {
+        $(`#${id}`).tooltip('hide')
+            // .attr('data-original-title', message)
+            .attr('title', message)
+            .tooltip('show');
+    }
+      
+    function hideTooltip(id) {
+        setTimeout(function() {
+            $(`#${id}`).tooltip('hide')
+                // .attr('title', 'Copy');
+                .tooltip('dispose')
+        }, 1000);
+        
+    }
+    
     $("#refresh-custom-alias").click((e) => {
         let randomStr = randomString(6);
         $('#custom-alias').val(randomStr);
@@ -109,30 +125,34 @@ $(document).ready(function () {
     }
 
     $("#custom-domain-alias").keypress(function(event) {
-        var char = String.fromCharCode(event.which)
-        if ($('#custom-domain-alias').val().length > 0) { // no ..
-            var lastChar = $('#custom-domain-alias').val().charAt($('#custom-domain-alias').val().length-1)
-            if (lastChar === '.' && char === '.') {
-                return false
-            }
-        }
-        if (char === ' ') { // convert spaces to .
-            char = '.'
-        } else if (char === '.') { // allow .
+        if (event.which === 13) {
+            return false
         } else {
-            var emailAddress = `${$('#custom-domain-alias').val() + char}@jinnmail.com`
-            if (!emailAddressAllowed(emailAddress)) { // convert other characters like " to -
-                emailAddress = `${$('#custom-domain-alias').val() + '-'}@jinnmail.com`
-                if (emailAddressAllowed(emailAddress)) {
-                    char = '-'
-                } else { // couldn't create an invalid email address by replacing with -
+            var char = String.fromCharCode(event.which)
+            if ($('#custom-domain-alias').val().length > 0) { // no ..
+                var lastChar = $('#custom-domain-alias').val().charAt($('#custom-domain-alias').val().length-1)
+                if (lastChar === '.' && char === '.') {
                     return false
                 }
             }
+            if (char === ' ') { // convert spaces to .
+                char = '.'
+            } else if (char === '.') { // allow .
+            } else {
+                var emailAddress = `${$('#custom-domain-alias').val() + char}@jinnmail.com`
+                if (!emailAddressAllowed(emailAddress)) { // convert other characters like " to -
+                    emailAddress = `${$('#custom-domain-alias').val() + '-'}@jinnmail.com`
+                    if (emailAddressAllowed(emailAddress)) {
+                        char = '-'
+                    } else { // couldn't create an invalid email address by replacing with -
+                        return false
+                    }
+                }
+            }
+            $('#custom-domain-alias').val($('#custom-domain-alias').val() + char);
+            formEmail()
+            return false
         }
-        $('#custom-domain-alias').val($('#custom-domain-alias').val() + char);
-        formEmail()
-        return false
     });
 
     $("#custom-alias").keypress(function(event) {
@@ -367,9 +387,11 @@ $(document).ready(function () {
         e.currentTarget.parentElement.parentElement.classList.remove('__visible')
     });
 
-    let copyToClipboard = (email) => {
+
+
+    let copyToClipboard = (email, id) => {
         // console.log('here', email)
-    
+
         var aux = document.createElement("input");
     
         
@@ -386,11 +408,14 @@ $(document).ready(function () {
     
         // Remove it from the body
         document.body.removeChild(aux);
+
+        setTooltip('Copied!', id);
+        hideTooltip(id);
     }
 
     $(document).delegate(".copy-clip", "click", function (e) {
         let email=e.currentTarget.parentElement.parentElement.parentElement.firstElementChild.firstElementChild.innerText;
-        copyToClipboard(email)
+        copyToClipboard(email, e.target.id)
 
     });
 

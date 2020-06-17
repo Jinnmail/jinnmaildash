@@ -3,6 +3,10 @@ $(document).ready(function () {
 
     localStorage.removeItem('jinnmailToken');
 
+    $("#email").keyup(function() {
+        return $('#email').val($('#email').val().toLowerCase());
+    });
+
     $('#btn-login').click(() => {
         let password = $('#key').val();
         let email = $('#email').val();
