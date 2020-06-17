@@ -86,66 +86,108 @@ $(document).ready(function () {
         }
     }
 
+    $("#refresh-custom-alias").click((e) => {
+        let randomStr = randomString(6);
+        $('#custom-alias').val(randomStr);
+        formEmail()
+    })
+
     $("#generate-jinnmail-web").click((e) => {
         setTimeout( () => {
             $('#domain-alias').focus();
         },1000)
     })
 
-    $("#custom-alias").keypress(function(event) {
-        $("#custom-alias").css({
-            "border": "1px solid rgba(0, 0, 0, .15)"
-        })
-        if (event.which === 13) {
-            return false
-        } else {
-            var char = String.fromCharCode(event.which) 
-            if (char === ' ') { // convert spaces to .
-                $('#custom-alias').val($('#custom-alias').val() + '.');
-                return false
-            } else if (char === '.') { // allow .
-                return
-            } else {
-                var emailAddress = `${$('#custom-alias').val() + char}@jinnmail.com`
-                if (!emailAddressAllowed(emailAddress)) { // convert other characters like " to -
-                    emailAddress = `${$('#custom-alias').val() + '-'}@jinnmail.com`
-                    if (emailAddressAllowed(emailAddress)) {
-                        $('#custom-alias').val($('#custom-alias').val() + '-');
-                        return false
-                    } else { // could create an invalid email address by replacing with -
-                        return false
-                    }
-                }
-            }
+    function formEmail() {
+        var customDomainAlias = $("#custom-domain-alias").val()
+        var customAlias = $("#custom-alias").val()
+        var period = ''
+        if (customDomainAlias) {
+            period = '.'
         }
-    });
+        $("#formed-email").text(`${customDomainAlias}${period}${customAlias}@jinnmail.com`)
+    }
 
     $("#custom-domain-alias").keypress(function(event) {
+        var char = String.fromCharCode(event.which)
+        if ($('#custom-domain-alias').val().length > 0) { // no ..
+            var lastChar = $('#custom-domain-alias').val().charAt($('#custom-domain-alias').val().length-1)
+            if (lastChar === '.' && char === '.') {
+                return false
+            }
+        }
+        if (char === ' ') { // convert spaces to .
+            char = '.'
+        } else if (char === '.') { // allow .
+        } else {
+            var emailAddress = `${$('#custom-domain-alias').val() + char}@jinnmail.com`
+            if (!emailAddressAllowed(emailAddress)) { // convert other characters like " to -
+                emailAddress = `${$('#custom-domain-alias').val() + '-'}@jinnmail.com`
+                if (emailAddressAllowed(emailAddress)) {
+                    char = '-'
+                } else { // couldn't create an invalid email address by replacing with -
+                    return false
+                }
+            }
+        }
+        $('#custom-domain-alias').val($('#custom-domain-alias').val() + char);
+        formEmail()
+        return false
+    });
+
+    $("#custom-alias").keypress(function(event) {
         if (event.which === 13) {
             return false
         } else {
-            var char = String.fromCharCode(event.which) 
+            var char = String.fromCharCode(event.which)
+            if ($('#custom-alias').val().length > 0) { // no ..
+                var lastChar = $('#custom-alias').val().charAt($('#custom-alias').val().length-1)
+                if (lastChar === '.' && char === '.') {
+                    return false
+                }
+            }
             if (char === ' ') { // convert spaces to .
-                $('#custom-alias').val($('#custom-alias').val() + '.');
-                return false
+                char = '.'
             } else if (char === '.') { // allow .
-                return
             } else {
                 var emailAddress = `${$('#custom-alias').val() + char}@jinnmail.com`
                 if (!emailAddressAllowed(emailAddress)) { // convert other characters like " to -
                     emailAddress = `${$('#custom-alias').val() + '-'}@jinnmail.com`
                     if (emailAddressAllowed(emailAddress)) {
-                        $('#custom-alias').val($('#custom-alias').val() + '-');
-                        return false
-                    } else { // could create an invalid email address by replacing with -
+                        char = '-'
+                    } else { // couldn't create an invalid email address by replacing with -
                         return false
                     }
                 }
             }
+            $('#custom-alias').val($('#custom-alias').val() + char);
+            formEmail()
+            return false
         }
     });
 
+    $("#custom-domain-alias").keydown(function(event) {
+        const key = event.key; // const {key} = event; ES6+
+        if (key === "Backspace") {
+            $("#custom-domain-alias").val($("#custom-domain-alias").val().substring(0, $('#custom-domain-alias').val().length-1))
+            formEmail()
+            return false
+        }
+    })
+
+    $("#custom-alias").keydown(function(event) {
+        const key = event.key; // const {key} = event; ES6+
+        if (key === "Backspace") {
+            $("#custom-alias").val($("#custom-alias").val().substring(0, $('#custom-alias').val().length-1))
+            formEmail()
+            return false
+        }
+    })
+
     $("#custom-jinnmail-web").click((e) => {
+        $("#custom-domain-alias").val('')
+        $("#custom-alias").val('')
+        $("#formed-email").text('@jinnmail.com')
         // console.log('here')
         $("#custom-alias").focus();
         let randomStr = randomString(6);
@@ -186,32 +228,18 @@ $(document).ready(function () {
 
     function checkAlias(link, alias, domainAlias) {
         if (localStorage.getItem('jinnmailToken')) {
-            function emailAddressAllowed(email) {
-                var emailRegex = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
-            
-                if (!email)
-                    return false;
-                if(email.length > 254)
-                    return false;
-                var valid = emailRegex.test(email);
-                if(!valid)
-                    return false;
-                var parts = email.split("@");
-                if(parts[0].length > 64)
-                    return false;
-                var domainParts = parts[1].split(".");
-                if(domainParts.some(function(part) { return part.length > 63; }))
-                    return false;
-            
-                return true;
-            }
-            function matchAlias(alias) {
-                return alias.alias === link;
+            const userId = JSON.parse(atob(localStorage.getItem("jinnmailToken").split('.')[1])).userId
+            function matchAlias(alias) { // alias.alias = xxx@jinnmail.com
+                return alias.alias === link; // new link = xxx@jinnmail.com
             }
             function AliasFound() {
-                $("#custom-alias").css({
-                    "border":"2px solid red"
-                })
+                // $("#custom-alias").css({
+                //     "border":"2px solid red"
+                // })
+                $("#alias-found-error").text("Alias already in use or is not accepted.")
+            }
+            function AliasFoundSameUserId() {
+                $("#alias-found-error").text("You already have this alias!")
             }
             function AliasNotFound() {
                 link = link.substring(0, link.lastIndexOf('@'))
@@ -243,18 +271,29 @@ $(document).ready(function () {
                     xhr.setRequestHeader ("Authorization", localStorage.getItem("jinnmailToken"));
                 },
                 success: (success) => {
-                    if (emailAddressAllowed(link)) {
-                        (success.data.filter(matchAlias).length>0)?AliasFound():AliasNotFound();
+                    if (emailAddressAllowed(link)) { // new link xxx@jinnmail.com
+                        const matchedAlias = success.data.filter(matchAlias) // find new link in all aliases
+                        // if (success.data.filter(matchAlias).length > 0) {
+                        if (matchedAlias.length > 0) {
+                            if (matchedAlias[0].userId === userId) { 
+                                AliasFoundSameUserId();
+                            } else {
+                                AliasFound()
+                            }
+
+                        } else {
+                            AliasNotFound();
+                        }
                     } else {
                         if (!emailAddressAllowed(alias)) {
-                            $("#custom-alias").css({
-                                "border":"2px solid red"
-                            })
+                            // $("#custom-alias").css({
+                            //     "border":"2px solid red"
+                            // })
                         }
-                        if (!emailAddressAllowed(domainAlias)) {
-                            $("#custom-domain-alias").css({
-                                "border":"2px solid red"
-                            })
+                        if (domainAlias && !emailAddressAllowed(domainAlias)) {
+                            // $("#custom-domain-alias").css({
+                            //     "border":"2px solid red"
+                            // })
                         }
                     }
                 },
@@ -410,7 +449,7 @@ $(document).ready(function () {
 });
 
 function emailAddressAllowed(email) {
-    var emailRegex = /^[-!#$%&'*+\/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
+    var emailRegex = /^[-+0-9A-Z_a-z](\.?[-+0-9A-Z_a-z])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
     if (!email)
         return false;

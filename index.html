@@ -263,33 +263,87 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                 </div>
+                <div class="modal-body"> 
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <small class="form-text text-muted">
+                                    Aliases must be unique. Use email-safe chars: -, +, 0-9, A-Z, _, a-z, no leading, trailing, or consecutive dots.
+                                </small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input id="custom-domain-alias" type="text" class="form-control" placeholder="(Optional) Enter domain / app / name"></input>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input id="custom-alias" type="text" class="form-control underlined-border" placeholder="Recipient's username"></input>
+                                <small class="form-text text-muted">
+                                    Customize or accept
+                                </small>
+                                <button type="button" style="position:absolute;top:13px;right:15px">
+                                    <img id="refresh-custom-alias" height="20px" width="20px" src="https://github.com/Jinnmail/uxdesign/blob/master/Images/refresh.png?raw=true" />
+                                </button>
+                            </div>
+                            <!-- <div class="form-group col-md-1">
+                                <label class="mt-md-2 ml-md-0">@jinnmail.com</label>
+                            </div> -->
+                        </div>
+                        <!-- <form>
+                            <div class="row">
+                                <div id="formed-email" class="form-group col-md-12" style="text-align:center"></div>
+                                    
+                                </div>
+                            </div>
+                        </form> -->
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div id="formed-email" class="form-group col-md-12" style="text-align:center">
+                                    
+                                </div>
+                            </div>
+                        </form>
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="form-group col-md-12" style="text-align:center">
+                                    <input id="custom-alias" hidden type="text" class="form-control is-invalid"</input>
+                                    <div id="alias-found-error" class="invalid-feedback">
 
-
-                <div class="modal-body">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="custom-alias" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-header">
+                            <h6 class="card-header-title m-0"></h6>
+                        </div>
+                        <div id="custom-alias-submit">
+                            <button id="generate-custom-jinnmail-submit" class="btn btn-primary" type="submit">Create a custom email</button>
+                        </div>
+                    </form>
+                    <!-- <div class="input-group mb-3"> -->
+                        <!-- <input type="text" class="form-control" id="custom-alias" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus> -->
                         <!-- <span class="input-text">8456be</span> -->
                         <!-- <div class="input-group-append">
                             <span id="custom-rand" class="input-group-text"></span>
                         </div> -->
-                    </div>
+                    <!-- </div> -->
                 </div>
-                <div class="modal-body">
+                <!-- <div class="modal-body">
                     <div class="modal-header">
                         <h6 class="card-header-title m-0">(OPTIONAL:)</h6>
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" id="custom-domain-alias" placeholder="Enter domain or app name:" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus>
+                    </div> -->
+                    <!-- <div class="input-group mb-3"> -->
+                        <!-- <input type="text" class="form-control" id="custom-domain-alias" placeholder="Enter domain or app name:" aria-label="Recipient's username" aria-describedby="basic-addon2" autofocus> -->
                         <!-- <span class="input-text">8456be</span> -->
                         <!-- <div class="input-group-append">
                             <span id="custom-rand" class="input-group-text"></span>
                         </div> -->
-                    </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+                <!-- <div id = "custom-alias-submit">
+                    <button id="generate-custom-jinnmail-submit" class="btn btn-primary" type="submit">Create a custom email</button>
                 </div>
-                <div id = "custom-alias-submit">
-                    <button id="generate-custom-jinnmail-submit" class="btn btn-primary" type="button">Create a custom email</button>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- create modal popup ends from here  -->
