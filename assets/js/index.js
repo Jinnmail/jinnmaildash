@@ -187,6 +187,7 @@ $(document).ready(function () {
     });
 
     $("#custom-domain-alias").keydown(function(event) {
+        $("#alias-found-error").text('')
         const key = event.key; // const {key} = event; ES6+
         if (key === "Backspace") {
             $("#custom-domain-alias").val($("#custom-domain-alias").val().substring(0, $('#custom-domain-alias').val().length-1))
@@ -196,6 +197,7 @@ $(document).ready(function () {
     })
 
     $("#custom-alias").keydown(function(event) {
+        $("#alias-found-error").text('')
         const key = event.key; // const {key} = event; ES6+
         if (key === "Backspace") {
             $("#custom-alias").val($("#custom-alias").val().substring(0, $('#custom-alias').val().length-1))
