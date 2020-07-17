@@ -5,7 +5,7 @@
 // const JM_EMAIL_DOMAIN='@dev.jinnmail.com'
 
 // test
-const JM_API_URL = 'https://jinnmailapptest.herokuapp.com/api/v1/';
+const JM_API_URL = 'https://jinnmailapptest.herokuapp.com/api/v1/'; 
 const JM_DASHBOARD_URL = 'https://jinnmaildashtest.herokuapp.com/login.html';
 const JM_DASHBOARD_URL_INDEX = 'https://jinnmaildashtest.herokuapp.com/index.html';
 const JM_EMAIL_DOMAIN='@test.jinnmail.com';
