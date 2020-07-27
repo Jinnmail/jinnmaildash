@@ -37,5 +37,7 @@ https://certbot.eff.org/lets-encrypt/ubuntufocal-apache
 
 ## Subsequent Deployments
 ```
-
+cd /var/www/html
+git pull
+sudo service apache2 restart
 ```
