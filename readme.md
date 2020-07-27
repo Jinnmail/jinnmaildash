@@ -28,7 +28,7 @@ set environment variables accordingly
 same as in dev substitution prod values
 const JM_API_URL = 'http://<api>/api/v1/';
 const JM_DASHBOARD_URL = 'https://account.jinnmail.com/login.html';
-const JM_DASHBOARD_URL_INDEX = 'https://jinnmail.com/account';
+const JM_DASHBOARD_URL_INDEX = 'https://account.jinnmail.com/index.html';
 const JM_EMAIL_DOMAIN='@dev.jinnmail.com'
 sudo service apache2 restart
 follow certbot instructions for using https and use account.jinnmail.com
